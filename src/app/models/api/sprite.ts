@@ -2,7 +2,7 @@ export default class Sprite{
 
     private constructor(
         
-        private female: {
+        public female: {
             default: {
                 front: String,
                 back: String,
@@ -13,7 +13,7 @@ export default class Sprite{
             }
         },
 
-        private male: {
+        public male: {
             default: {
                 front: String,
                 back: String,

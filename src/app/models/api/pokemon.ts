@@ -5,13 +5,13 @@ import Sprite from "./sprite";
 export default class Pokemon{
 
     private constructor(
-        private id: Number,
-        private name: String,
-        private height: Number,
-        private weight: Number,
-        private types: Type[],
-        private abilities: Ability[],
-        private sprite: Sprite
+        public id: Number,
+        public name: String,
+        public height: Number,
+        public weight: Number,
+        public types: Type[],
+        public abilities: Ability[],
+        public sprite: Sprite
     ){
 
     }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import User from 'src/app/models/user';
 
 @Component({
   selector: 'app-signin',
@@ -9,10 +10,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class SigninComponent implements OnInit {
 
-  user = {
-    email: '',
-    password: ''
-  }
+  user: User;
 
   constructor(private authService: AuthService, private router: Router) {
 
@@ -21,7 +19,7 @@ export class SigninComponent implements OnInit {
   ngOnInit() {
   }
 
-  signIn(user){
+  signIn(){
     this.authService.signIn(this.user)
     .subscribe(
       res => {

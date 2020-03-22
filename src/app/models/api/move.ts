@@ -1,8 +1,8 @@
 export default class Move{
 
     private constructor(
-        private id: Number,
-        private name: String
+        public id: Number,
+        public name: String
     ){
 
     }

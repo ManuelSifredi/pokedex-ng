@@ -1,8 +1,8 @@
 export default class Ability{
 
     private constructor(
-        private id: Number,
-        private name: String
+        public id: Number,
+        public name: String
     ){
 
     }
