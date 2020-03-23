@@ -1,11 +1,12 @@
 <div class="d-inline-block col-12 col-sm-6 col-md-4 col-lg-3 p-1">
-    <div class="card text-center" (mouseenter)="shiny=true" (mouseleave)="shiny=false">
-        <div class="card-header">
-            <h5>{{pokemon.name}}</h5>
+    <!-- <div class="card text-center" (mouseenter)="shiny=true" (mouseleave)="shiny=false"> -->
+    <div class="card text-center">
+        <div class="card-header bg-primary">
+            <h5 class="m-1">{{pokemon.name}}</h5>
         </div>
         <div class="card-body">
 
-            <ng-container *ngIf="!shiny">
+            <!-- <ng-container *ngIf="!shiny">
                 <div class="d-inline-block">
                     <img class="card-img" src="{{pokemon.sprite.male.default.back}}">
                 </div>
@@ -21,7 +22,25 @@
                 <div class="d-inline-block">
                     <img class="card-img" src="{{pokemon.sprite.male.shiny.front}}">
                 </div>
-            </ng-container>
+            </ng-container> -->
+
+            <div class="default">
+                <div class="d-inline-block">
+                    <img class="card-img" src="{{pokemon.sprite.male.default.back}}">
+                </div>
+                <div class="d-inline-block">
+                    <img class="card-img" src="{{pokemon.sprite.male.default.front}}">
+                </div>
+            </div>
+
+            <div class="shiny">
+                <div class="d-inline-block">
+                    <img class="card-img" src="{{pokemon.sprite.male.shiny.back}}">
+                </div>
+                <div class="d-inline-block">
+                    <img class="card-img" src="{{pokemon.sprite.male.shiny.front}}">
+                </div>
+            </div>
 
         </div>
 

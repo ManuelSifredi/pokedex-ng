@@ -31,11 +31,11 @@ const routes: Routes = [
     path: 'signup',
     component: SignupComponent
   },
-  {
-    path: 'my-pokedex',
-    component: PokedexComponent,
-    canActivate: [AuthGuard]
-  },
+  // {
+  //   path: 'my-pokedex',
+  //   component: PokedexComponent,
+  //   canActivate: [AuthGuard]
+  // },
 
 ];
 

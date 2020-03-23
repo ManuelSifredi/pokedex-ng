@@ -11,10 +11,10 @@ export class PokedexItemComponent implements OnInit {
 
   @Input() pokemon: Pokemon;
 
-  shiny: Boolean;
+  // shiny: Boolean;
 
   constructor() {
-    this.shiny = false;
+    // this.shiny = false;
   }
 
   ngOnInit() {

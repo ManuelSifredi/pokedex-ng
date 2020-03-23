@@ -1,0 +1,11 @@
+.shiny{
+    display: none;
+}
+
+.card:hover .shiny{
+    display: inline;
+}
+
+.card:hover .default{
+    display: none;
+}

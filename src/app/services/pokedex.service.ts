@@ -10,12 +10,12 @@ export class PokedexService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getPokedex(){
+  getAllPokemons(){
     return this.httpClient.get<any>(`${this.URL}/getPokemons`);
   }
 
-  getPrivateTasks(){
-    return this.httpClient.get<any>(`${this.URL}/private-tasks`);
+  getPokemonByName(name: String){
+    return this.httpClient.get<any>(`${this.URL}/getPokemon?name=${name}`)
   }
 
 }
