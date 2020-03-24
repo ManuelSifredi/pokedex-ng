@@ -17,29 +17,24 @@
     <app-pokedex-item *ngFor="let pokemon of pokemons" [pokemon]="pokemon"></app-pokedex-item>
 </div>
 
-<div style="margin:20px;">
-    <table>
-       <tr *ngFor="let item of items | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
-         <td>{{item.Name}}</td>
-  
-  
-       </tr>
-    </table>
-    <ngb-pagination [collectionSize]="items.length" [(page)]="page" [maxSize]="5" [rotate]="true" [ellipses]="false" [boundaryLinks]="true"></ngb-pagination>
-  </div>
-
-<!-- <table>
-    <tr *ngFor="let item of items | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
-      
-
-
-
-
-    </tr>
-</table>
-
-<ngb-pagination
-  [(page)]="page"
-  [pageSize]="pageSize"
-  [collectionSize]="pokemons.length">
-</ngb-pagination> -->
+<div class="form-group">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li>
+                <a (click)=ChangePage(1) class="page-link"><<</a>
+            </li>
+            <li>
+                <a (click)=ChangePage(page-1) class="page-link"><</a>
+            </li>
+            <li *ngFor="let item of pagesarray" [ngClass]="{ active:page === item }" class="page-item number-item">
+                <a (click)=ChangePage(item) class="page-link">{{item}}</a>
+            </li>
+            <li>
+                <a (click)=ChangePage(page+1) class="page-link">></a>
+            </li>
+            <li>
+                <a (click)=ChangePage(pages) class="page-link">>></a>
+            </li>
+        </ul>
+      </nav>
+</div>

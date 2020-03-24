@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +10,9 @@ export class PokedexService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getAllPokemons(){
-    return this.httpClient.get<any>(`${this.URL}/getPokemons`);
+  getAllPokemons(page: Number){
+    const params = new HttpParams().set('page', page.toString());
+    return this.httpClient.get<any>(`${this.URL}/getPokemons`, { params });
   }
 
   getPokemonByName(name: String){
