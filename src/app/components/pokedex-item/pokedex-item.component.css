@@ -9,3 +9,85 @@
 .card:hover .default{
     display: none;
 }
+
+.typeBox{
+    border-radius: 3px;
+    cursor: default;
+    width: 30%;
+}
+
+.Flying, .Electric, .Ice{
+    color: black;
+}
+
+.Normal, .Grass, .Fire, .Fairy, .Ground, .Poison, .Water, .Bug, .Fighting, .Psychic, .Rock, .Ghost, .Dark, .Steel{
+    color: white;
+}
+
+.Grass{
+    background-color: darkgreen;
+}
+
+.Poison{
+    background-color: darkorchid;
+}
+
+.Fire{
+    background-color: tomato;
+}
+
+.Water{
+    background-color: dodgerblue;
+}
+
+.Bug{
+    background-color: darkgreen;
+}
+
+.Flying{
+    background: lightblue;
+}
+
+.Normal{
+    background-color: gray;
+}
+
+.Electric{
+    background-color: goldenrod;
+}
+
+.Ground{
+    background-color: darkgoldenrod;
+}
+
+.Fairy{
+    background-color: hotpink;
+}
+
+.Fighting{
+    background-color: darkred;
+}
+
+.Psychic{
+    background-color: violet;
+}
+
+.Rock{
+    background-color: peru;
+}
+
+.Ice{
+    background-color: lightskyblue;
+}
+
+.Ghost{
+    background-color: purple;
+}
+
+.Dark{
+    background-color: slategray;
+}
+
+.Steel{
+    background-color: steelblue;
+}
