@@ -4,25 +4,7 @@
         <div class="card-header bg-primary">
             <h5 class="m-1">{{pokemon.name}}</h5>
         </div>
-        <div class="card-body">
-
-            <!-- <ng-container *ngIf="!shiny">
-                <div class="d-inline-block">
-                    <img class="card-img" src="{{pokemon.sprite.male.default.back}}">
-                </div>
-                <div class="d-inline-block">
-                    <img class="card-img" src="{{pokemon.sprite.male.default.front}}">
-                </div>
-            </ng-container>
-
-            <ng-container *ngIf="shiny">
-                <div class="d-inline-block">
-                    <img class="card-img" src="{{pokemon.sprite.male.shiny.back}}">
-                </div>
-                <div class="d-inline-block">
-                    <img class="card-img" src="{{pokemon.sprite.male.shiny.front}}">
-                </div>
-            </ng-container> -->
+        <div class="card-body" *ngIf=pokemon.sprite>
 
             <div class="default">
                 <div class="d-inline-block">
@@ -42,6 +24,10 @@
                 </div>
             </div>
 
+        </div>
+
+        <div class="card-body" *ngIf="!pokemon.sprite">
+            <img width="96" height="96" src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/04de2e31234507.564a1d23645bf.gif">
         </div>
 
     </div>

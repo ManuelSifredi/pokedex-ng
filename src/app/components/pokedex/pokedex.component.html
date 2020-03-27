@@ -5,7 +5,7 @@
 <div class="form-group">
     <div class="form-row">
         <div class="col-6">
-            <input type="text" class="form-control" #pokemonName placeholder="Search pokemon by name..." />
+            <input type="text" class="form-control" (keyup.enter)=GetPokemon(pokemonName.value) #pokemonName placeholder="Search pokemon by name..." />
         </div>
         <div class="col-6">
             <button class="btn btn-primary" (click)="GetPokemon(pokemonName.value)">Search!</button>

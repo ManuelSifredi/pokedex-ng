@@ -77,6 +77,16 @@ export class PokedexComponent implements OnInit {
     let offset = 5;
     let minpage = 0;
     let maxpage = 0;
+    
+    if(this.pages < offset*2){
+      minpage = 1;
+      this.pagesarray = Array(this.pages);
+      for (let index = 0; index < this.pagesarray.length; index++) {
+        this.pagesarray[index] = minpage;
+        minpage++;
+      }
+      return this.pagesarray;
+    }
 
     const mindiff = this.page - offset;
     if(mindiff > 0)
