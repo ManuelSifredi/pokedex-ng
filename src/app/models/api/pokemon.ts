@@ -20,7 +20,7 @@ export default class Pokemon{
         const abilities: Ability[] = Ability.prototype.CreateAbilities(data.abilities);
         const types: Type[] = Type.prototype.CreateTypes(data.types);
         const sprite: Sprite = Sprite.prototype.CreateSprite(data.sprites);
-        return new Pokemon(data.id, data.name, data.height, data.weight, types, abilities, sprite);
+        return new Pokemon(data.id, this.CapitalizeFirstLetter(data.name), data.height, data.weight, types, abilities, sprite);
     }
 
     CreatePokemons(data: any): Pokemon[]{
@@ -29,5 +29,9 @@ export default class Pokemon{
             pokemons.push(this.CreatePokemon(element));
         });
         return pokemons;
+    }
+
+    CapitalizeFirstLetter(str: String): String {
+        return str.charAt(0).toUpperCase() + str.slice(1);
     }
 }

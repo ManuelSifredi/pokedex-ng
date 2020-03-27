@@ -28,8 +28,7 @@ export class PokedexItemComponent implements OnInit {
   }
 
   SetData(res: any){
-    this.pokemon = res.results[0];
-    console.log(this.pokemon);
+    this.pokemon = Pokemon.prototype.CreatePokemon(res.results[0]);
   }
   
 }

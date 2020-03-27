@@ -31,22 +31,22 @@ export default class Sprite{
     CreateSprite(data: any): Sprite{
         const female: any = {
             default: {
-                front: data.front_female,
-                back: data.back_female,
+                front: data.frontFemale != undefined ? data.frontFemale : "/assets/img/missingno.png",
+                back: data.backFemale != undefined ? data.backFemale : "/assets/img/missingno.png",
             },
             shiny: {
-                front: data.front_shiny_female,
-                back: data.back_shiny_female,
+                front: data.frontShinyFemale != undefined ? data.frontShinyFemale : "/assets/img/missingno.png",
+                back: data.backShinyFemale != undefined ? data.backShinyFemale : "/assets/img/missingno.png",
             }
         }
         const male: any = {
             default: {
-                front: data.front_default,
-                back: data.back_default,
+                front: data.frontDefault != undefined ? data.frontDefault : "/assets/img/missingno.png",
+                back: data.backDefault != undefined ? data.backDefault : "/assets/img/missingno.png",
             },
             shiny: {
-                front: data.front_shiny,
-                back: data.back_shiny,
+                front: data.frontShiny != undefined ? data.frontShiny : "/assets/img/missingno.png",
+                back: data.backShiny != undefined ? data.backShiny : "/assets/img/missingno.png",
             }
         }
         return new Sprite(female, male);
