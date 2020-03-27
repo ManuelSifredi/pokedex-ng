@@ -8,30 +8,30 @@
 
             <div class="default">
                 <div class="d-inline-block">
-                    <img class="card-img" src="{{pokemon.sprite.male.default.back}}">
+                    <img class="card-img" width="96" height="96" src="{{pokemon.sprite.male.default.back}}">
                 </div>
                 <div class="d-inline-block">
-                    <img class="card-img" src="{{pokemon.sprite.male.default.front}}">
+                    <img class="card-img" width="96" height="96" src="{{pokemon.sprite.male.default.front}}">
                 </div>
             </div>
 
             <div class="shiny">
                 <div class="d-inline-block">
-                    <img class="card-img" src="{{pokemon.sprite.male.shiny.back}}">
+                    <img class="card-img" width="96" height="96" src="{{pokemon.sprite.male.shiny.back}}">
                 </div>
                 <div class="d-inline-block">
-                    <img class="card-img" src="{{pokemon.sprite.male.shiny.front}}">
+                    <img class="card-img" width="96" height="96" src="{{pokemon.sprite.male.shiny.front}}">
                 </div>
             </div>
 
         </div>
 
         <div class="card-body" *ngIf="!pokemon.sprite">
-            <img width="96" height="96" src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/04de2e31234507.564a1d23645bf.gif">
+            <img width="96" height="96" src="/assets/img/loading.gif">
         </div>
 
         <div class="card-footer">
-                <div class="d-inline-block typeBox mx-1 {{type.name}}" *ngFor="let type of pokemon.types">
+                <div class="d-inline-block typeBox mx-1 {{type.name}}" (click)="SetTypeParent(type.name)" *ngFor="let type of pokemon.types">
                     {{type.name}}
                 </div>
         </div>

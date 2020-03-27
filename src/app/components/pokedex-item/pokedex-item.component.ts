@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import Pokemon from 'src/app/models/api/pokemon';
 import { PokedexService } from 'src/app/services/pokedex.service';
@@ -11,24 +11,23 @@ import { PokedexService } from 'src/app/services/pokedex.service';
 export class PokedexItemComponent implements OnInit {
 
   @Input() pokemon: Pokemon;
-
-  // shiny: Boolean;
+  @Output() typeSearch = new EventEmitter<string>();
 
   constructor(private pokedexService: PokedexService) {
-    // this.shiny = false;
+    
   }
 
   ngOnInit() {
     this.pokedexService.getPokemonByName(this.pokemon.name)
     .subscribe(res => {
-      this.SetData(res);
+      this.pokemon = Pokemon.prototype.CreatePokemon(res.results[0]);
     }, err => {
       console.log(err);
     });
   }
-
-  SetData(res: any){
-    this.pokemon = Pokemon.prototype.CreatePokemon(res.results[0]);
+  
+  SetTypeParent(type: string){
+    this.typeSearch.emit(type);
   }
   
 }

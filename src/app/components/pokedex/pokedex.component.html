@@ -1,5 +1,5 @@
 <div class="form-group">
-    <h1>Pokedex</h1>
+    <p class="h1 d-inline-block">Pokedex</p> <div class="btn btn-outline-danger d-inline-block ml-4" (click)="SetTypeAndSearch(undefined)" *ngIf="typeSearch">Looking for: {{typeSearch}}</div>
 </div>
 
 <div class="form-group">
@@ -14,7 +14,7 @@
 </div>
 
 <div class="form-group">
-    <app-pokedex-item *ngFor="let pokemon of pokemons" [pokemon]="pokemon"></app-pokedex-item>
+    <app-pokedex-item *ngFor="let pokemon of pokemons" [pokemon]="pokemon" (typeSearch)="SetTypeAndSearch($event)"></app-pokedex-item>
 </div>
 
 <div class="form-group">

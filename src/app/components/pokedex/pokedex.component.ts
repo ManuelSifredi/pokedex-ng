@@ -14,6 +14,7 @@ export class PokedexComponent implements OnInit {
   pageSize = 20;
   pages = 0;
   pagesarray = [];
+  typeSearch = undefined;
 
   constructor(private pokedexService: PokedexService) {
     
@@ -30,13 +31,13 @@ export class PokedexComponent implements OnInit {
 
   GetPokemon(name: String = "") {
     if (name == "")
-      this.SearchAllPokemon(this.page);
+      this.SearchAllPokemon();
     else
       this.SearchPokemonByName(name);
   }
 
-  SearchAllPokemon(page: Number = 1): any {
-    this.pokedexService.getAllPokemons(page)
+  SearchAllPokemon(): any {
+    this.pokedexService.getAllPokemons(this.page, this.typeSearch)
       .subscribe(res => {
         this.SetData(res);
       }, err => {
@@ -44,7 +45,13 @@ export class PokedexComponent implements OnInit {
       });
   }
 
+  SetTypeAndSearch(type: string){
+    this.typeSearch = type;
+    this.SearchAllPokemon();
+  }
+
   SearchPokemonByName(name: String) {
+    this.typeSearch = undefined;
     this.pokedexService.getPokemonByName(name)
       .subscribe(res => {
         if (res) {
@@ -63,7 +70,7 @@ export class PokedexComponent implements OnInit {
   SetData(res: any){
     this.results = res;
     this.pokemons = res.results;
-    this.SetPagesData();
+    this.SetPaginationData();
   }
 
   ChangePage(page: number){
@@ -71,7 +78,7 @@ export class PokedexComponent implements OnInit {
     this.GetPokemon();
   }
 
-  SetPagesData(){
+  SetPaginationData(){
     this.pages = Math.ceil(this.results.count / this.pageSize);
 
     let offset = 5;

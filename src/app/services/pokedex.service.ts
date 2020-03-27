@@ -11,8 +11,18 @@ export class PokedexService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getAllPokemons(page: Number){
-    const params = new HttpParams().set('page', page.toString());
+  getAllPokemons(page: Number, type: string){
+    let map = new Map<string, string>();
+    map.set('page', page.toString());
+    if(type != undefined){
+      map.set('type', type);
+    }
+
+    let params = new HttpParams();
+    map.forEach(function (value: string, key: string) { 
+      params = params.set(key, value);
+    });
+
     return this.httpClient.get<any>(`${this.URL}/pokemon`, { params });
   }
 
