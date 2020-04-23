@@ -7,7 +7,9 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  private URL = "http://localhost:3000/api";
+  // private URL = 'https://localhost:44332/api';
+  // private URL = "http://localhost:3000/api";
+  private URL = "https://pokedex-nodejs.herokuapp.com/api";
 
   constructor(private httpClient: HttpClient, private router: Router) { }
 

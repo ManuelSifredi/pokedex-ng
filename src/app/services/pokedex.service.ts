@@ -7,7 +7,8 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 export class PokedexService {
 
   // private URL = 'https://localhost:44332/api';
-  private URL = 'http://localhost:3000/api';
+  // private URL = 'http://localhost:3000/api';
+  private URL = "https://pokedex-nodejs.herokuapp.com/api";
 
   constructor(private httpClient: HttpClient) { }
 
