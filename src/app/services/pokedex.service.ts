@@ -1,14 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PokedexService {
-
-  // private URL = 'https://localhost:44332/api';
-  // private URL = 'http://localhost:3000/api';
-  private URL = "https://pokedex-nodejs.herokuapp.com/api";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -24,11 +21,11 @@ export class PokedexService {
       params = params.set(key, value);
     });
 
-    return this.httpClient.get<any>(`${this.URL}/pokemon`, { params });
+    return this.httpClient.get<any>(`${environment.API}/pokemon`, { params });
   }
 
   getPokemonByName(name: String){
-    return this.httpClient.get<any>(`${this.URL}/pokemon/${name}`)
+    return this.httpClient.get<any>(`${environment.API}/pokemon/${name}`)
   }
 
 }

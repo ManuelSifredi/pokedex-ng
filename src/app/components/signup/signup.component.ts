@@ -10,7 +10,7 @@ import User from 'src/app/models/user';
 })
 export class SignupComponent implements OnInit {
 
-  user: User;
+  user: User = new User();
 
   constructor(private authService: AuthService, private router: Router) {
     
